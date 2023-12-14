@@ -1,0 +1,452 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/GalvanizedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/CorrugatedMetal.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/devices/robotiq/protos/Robotiq3fGripper.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/universal_robots/protos/UR5e.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/containers/protos/PlasticCrate.proto"
+
+WorldInfo {
+  info [
+    "Universal Robot UR5e Object Sorting."
+  ]
+  title "Universal Robot"
+  basicTimeStep 8
+  physicsDisableAngularThreshold 0.1
+  contactProperties [
+    ContactProperties {
+      bounce 0.1
+    }
+    ContactProperties {
+      material1 "slope"
+      coulombFriction [
+        0.5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation 0.21461828949700237 -0.420288891862838 -0.8816440535670212 5.234473136008931
+  position -3.6186938338641843 -7.301889180422625 4.322203036921993
+  exposure 1.7
+}
+TexturedBackground {
+  texture "stadium"
+}
+SolidBox {
+  translation -0.135 -0.0323 0.305
+  size 1.5 0.4 0.61
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation -0.135 0.7177 0.145
+  rotation 1 0 0 1.5708
+  name "box(1)"
+  size 1.5 0.22 0.61
+  appearance GalvanizedMetal {
+  }
+}
+SolidBox {
+  translation 1.365 0.7177 0.145
+  rotation 1 0 0 1.5708
+  name "box(2)"
+  size 1.5 0.22 0.61
+  appearance GalvanizedMetal {
+  }
+}
+UR5e {
+  translation 0 0 0.61
+  rotation 5.67193e-08 2.39745e-09 -1 1.5708
+  controller "UR5e"
+  selfCollision FALSE
+  toolSlot [
+    Robotiq3fGripper {
+    }
+    DistanceSensor {
+      translation 0 0.1 0
+      rotation 0 0 1 1.570796
+    }
+    Camera {
+      translation -4.04052e-07 0.11 -0.03
+      rotation 0 0 1 1.5708
+      physics Physics {
+      }
+      recognition Recognition {
+      }
+    }
+  ]
+}
+ConveyorBelt {
+  translation 6.43 -1.05 0
+  rotation 0 0 1 3.141592
+  size 14 0.7 0.6
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 0.2
+}
+PlasticCrate {
+  translation 0.639999 0.679897 0.249852
+  rotation 0.4916583380274117 -0.8707856401341657 0.0021089296466701734 0.000137128012617896
+  size 0.6 0.45 0.4
+  mass 1
+}
+PlasticCrate {
+  translation -0.56 0.68 0.249855
+  rotation -0.9027451298377399 0.4301737789149118 0.0013230602052454125 0.0001066686707083631
+  name "plastic crate(1)"
+  size 0.6 0.45 0.4
+  color 0 0 1
+  mass 1
+}
+PlasticCrate {
+  translation 0.04 0.68 0.249874
+  rotation 0.008718656970972636 -0.9999619917875977 8.957993979037346e-07 2.0524325581630705e-05
+  name "plastic crate(2)"
+  size 0.6 0.45 0.4
+  color 0 1 0
+  mass 1
+}
+Solid {
+  translation 0.93 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          emissiveColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "RedBox"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 6.9 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          emissiveColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "RedBox(1)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 8.99 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          emissiveColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "RedBox(2)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 9.94 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          emissiveColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "RedBox(3)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 11 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          emissiveColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "RedBox(4)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 12.01 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 1 0 0
+          emissiveColor 1 0 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "RedBox(5)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 2.29 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+          emissiveColor 0 0 1
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "BlueBox"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+Solid {
+  translation 5.92 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+          emissiveColor 0 0 1
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "BlueBox(1)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+Solid {
+  translation 13.15 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 0 1
+          emissiveColor 0 0 1
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "BlueBox(2)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+Solid {
+  translation 3.81 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          emissiveColor 0 1 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "GreenBox"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+Solid {
+  translation 4.88 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          emissiveColor 0 1 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "GreenBox(1)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+Solid {
+  translation 7.95 -0.83 0.64
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0 1 0
+          emissiveColor 0 1 0
+        }
+      }
+      geometry Box {
+        size 0.14 0.14 0.14
+      }
+    }
+  ]
+  name "GreenBox(2)"
+  boundingObject Shape {
+    geometry Box {
+      size 0.1 0.1 0.1
+    }
+  }
+  physics Physics {
+    density 100
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
